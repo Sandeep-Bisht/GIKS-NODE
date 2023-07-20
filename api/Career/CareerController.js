@@ -3,10 +3,8 @@ const nodemailer = require("nodemailer");
 
 module.exports = {
     createApplicant : async (req, res) => {
-        console.log("inside carrer", req.body, "file", req.file) ;
         const { fullName,  email, qualification, experience, lastCompany } = req.body;    
         const  file  = req.file; 
-        console.log("fileeeeeeeeeee",file)
 
         connection.query(`INSERT INTO applicants VALUES ('${fullName}', '${email}','${qualification}','${experience}','${lastCompany}', '${file}')`, async (error, result) =>{
             if(error){
@@ -15,7 +13,6 @@ module.exports = {
             } else{
                 let response = await sendEmailViaSmtp(fullName,email, file );
                 if (response.messageId) {    
-                    console.log("inside true", response.messageId)
                     emailSendStatus = true;
                     res.status(200).json({
                       emailSendStatus,
@@ -24,7 +21,6 @@ module.exports = {
                     });
                     }         
                    else {
-                    console.log("inside dalse", response)
                     emailSendStatus = false;
                     res.status(200).json({
                       emailSendStatus,
