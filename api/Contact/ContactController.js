@@ -3,7 +3,6 @@ const nodemailer = require("nodemailer");
 
 module.exports = {
     createUser : async (req, res) => {
-        console.log("inside createTable", req.body);
         const { firstName, lastName, email, phoneNumber, subject, message } = req.body;
 
         connection.query(`INSERT INTO user VALUES ('${firstName}', '${lastName}','${email}','${phoneNumber}','${subject}','${message}')`, async (error, result) =>{
