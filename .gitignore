@@ -1,0 +1,8 @@
+# dependencies
+/node_modules
+
+# Ignore environment-specific files
+.env
+
+# Ignore the connection.js file
+connection.js
