@@ -6,7 +6,7 @@ const db = mysql.createConnection({
     host : process.env.DB_HOST,
     user : process.env.DB_USER,
     password : process.env.DB_PASS,
-    database : 'giks_website'
+    database : 'giks_react_website'
 })
 
 db.connect((err) => {
