@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser')
-const db = require('./connection');
+// require('./connection');
 
 const ContactRouter = require('./api/Contact/ContactRouting');
 const CareerRouter = require('./api/Career/CareerRouting')
