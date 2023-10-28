@@ -6,14 +6,16 @@ const bodyParser = require('body-parser')
 
 const ContactRouter = require('./api/Contact/ContactRouting');
 const CareerRouter = require('./api/Career/CareerRouting')
+const BlogRouter = require('./api/Blog/BlogRouting');
 
 app.use(express.json());
 app.use(cors({ origin: true }));
 app.use(bodyParser.urlencoded({extended : true }));
-app.use("/uploads", express.static("uploads"));
+app.use("/api/public", express.static("public"));
 
 app.use('/api/contact-us', ContactRouter);
 app.use('/api/career', CareerRouter);
+app.use('/api/blog',BlogRouter)
 
 app.get("/", (_,res)=> {
     res.send("Server is running");
