@@ -13,9 +13,9 @@ app.use(cors({ origin: true }));
 app.use(bodyParser.urlencoded({extended : true }));
 app.use("/api/public", express.static("public"));
 
-app.use('/api/contact-us', ContactRouter);
-app.use('/api/career', CareerRouter);
-app.use('/api/blog',BlogRouter)
+app.use('//api/contact-us', ContactRouter);
+app.use('//api/career', CareerRouter);
+app.use('//api/blog',BlogRouter)
 
 app.get("/", (_,res)=> {
     res.send("Server is running");
