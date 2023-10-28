@@ -36,7 +36,7 @@ module.exports = {
           return res.status(500).send("Error reading image file");
         }
 
-        const imageObject = {
+        const imageObject ={
           fieldname: featuredImage.fieldname,
           originalname: featuredImage.originalname,
           encoding: featuredImage.encoding,
