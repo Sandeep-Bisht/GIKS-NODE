@@ -17,7 +17,7 @@ app.use("//api/public", express.static("public"));
 app.use('//api/contact-us', ContactRouter);
 app.use('//api/career', CareerRouter);
 app.use('//api/blog',BlogRouter)
-app.use('//api/authentication',AuthenticationRouter)
+// app.use('//api/authentication',AuthenticationRouter)
 
 app.get("/", (_,res)=> {
     res.send("Server is running");
