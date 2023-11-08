@@ -30,7 +30,7 @@ module.exports = {
                     password : user.password,
                     id : user.id
                 } 
-                const secretKey = "This is my Doo Digestive Care secret key"         
+                const secretKey = "This is my Giks India secret key"         
                 const token = jwt.sign(payload, secretKey, { expiresIn: "1h" });
                 return res.status(200).send({
                   status: 200,

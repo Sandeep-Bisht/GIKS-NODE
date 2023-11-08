@@ -115,9 +115,16 @@ module.exports = {
         console.log(results,"check result")
         res.status(404).json({ error: "Not Found" });
       } else {
-        const post = results[0];
-        res.json(post);
+        const blog = results[0];
+        const featuredImage = JSON.parse(results[0].featuredImage);
+        blog.featuredImage = featuredImage
+        console.log("inside get blog by slug", blog)
+        
+        res.status(200).json(blog);
+         
+             
       }
+     
     });
   },
   getBlogByCategory: async (req, res) => {
