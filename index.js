@@ -8,6 +8,7 @@ const ContactRouter = require('./api/Contact/ContactRouting');
 const CareerRouter = require('./api/Career/CareerRouting')
 const BlogRouter = require('./api/Blog/BlogRouting');
 const AuthenticationRouter = require('./api/Authentication/AuthenticationRouting')
+// const CategoryRouter = require('./api/Category/CategoryRouting')
 
 app.use(express.json());
 app.use(cors({ origin: true }));
