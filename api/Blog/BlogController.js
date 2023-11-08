@@ -120,6 +120,25 @@ module.exports = {
       }
     });
   },
+  getBlogByCategory: async (req, res) => {
+    const  payload  = req.body;
+    const query = "SELECT * FROM blog WHERE category = ?";
+    
+    connection.query(query, [payload.category], (error, results) => {
+      if (error) {
+        console.error("Error executing query:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+        return;
+      }
+      if (results.length === 0) {
+        console.log(results, "check result");
+        res.status(404).json({ error: "Not Found" });
+      } else {
+        const post = results;
+        res.json(post);
+      }
+    });
+  },
   updateBlog: async (req, res) => {
     const { title, description, content, slug, category } = req.body;
     const featuredImage = req.files[0];

@@ -8,6 +8,7 @@ const ContactRouter = require('./api/Contact/ContactRouting');
 const CareerRouter = require('./api/Career/CareerRouting')
 const BlogRouter = require('./api/Blog/BlogRouting');
 const AuthenticationRouter = require('./api/Authentication/AuthenticationRouting')
+// const CategoryRouter = require('./api/Category/CategoryRouting')
 
 app.use(express.json());
 app.use(cors({ origin: true }));
@@ -18,6 +19,7 @@ app.use('/api/contact-us', ContactRouter);
 app.use('/api/career', CareerRouter);
 app.use('/api/blog',BlogRouter)
 app.use('/api/authentication',AuthenticationRouter)
+// app.use('/api/category',CategoryRouter)
 
 app.get("/", (_,res)=> {
     res.send("Server is running");
