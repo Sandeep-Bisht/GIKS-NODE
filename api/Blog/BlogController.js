@@ -137,13 +137,25 @@ module.exports = {
         res.status(500).json({ error: "Internal Server Error" });
         return;
       }
-      if (results.length === 0) {
-        console.log(results, "check result");
-        res.status(404).json({ error: "Not Found" });
-      } else {
-        const post = results;
-        res.json(post);
-      }
+      // if (results.length === 0) {
+      //   console.log(results, "check result");
+      //   res.status(404).json({ error: "Not Found" });
+      // } else {
+      //   const post = results;
+      //   res.json(post);
+      // }
+
+       // Parse the featuredImage JSON string back into an object
+       const blogs = results.map((blog) => {
+        const parsedImage = JSON.parse(blog.featuredImage);
+        return {
+          ...blog,
+          featuredImage: parsedImage,
+        };
+      });
+
+      res.status(200).json(blogs);
+      
     });
   },
   updateBlog: async (req, res) => {
