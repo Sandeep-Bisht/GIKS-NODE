@@ -85,7 +85,7 @@ let sendEmailViaSmtp = async (firstName,lastName,phoneNumber, email,subject, mes
               <P>
                   Dear ${firstName} ${lastName},<br>
                   <p>
-                  We have recived your request, we will get back to you shortly.
+                  We have received your request, we will get back to you shortly.
                   </p>
                   <p>
                   Thanks for showing interest in GIKS INDIA
